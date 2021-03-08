@@ -1,0 +1,10 @@
+ #This is for the PC PowerPlan
+   Import-DSCResource -ModuleName ComputerManagementDsc
+   Node localhost 
+   {
+      PowerPlan SetPlanBatterySaver
+     {
+    IsSingleInstace = 'Yes'
+    Name = 'BatterySaver'
+    }
+      
