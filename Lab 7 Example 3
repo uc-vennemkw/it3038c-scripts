@@ -1,0 +1,7 @@
+ #This is for the ExecutionPolicy
+   Import-DSCResource -ModuleName ComputerManagementDsc
+   PowerShellExecutionPolicy ExecutionPolicy
+        {
+            ExecutionPolicyScope = 'LocalMachine'
+            ExecutionPolicy      = 'Restricted'
+           }
