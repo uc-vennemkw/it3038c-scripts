@@ -9,23 +9,6 @@
  Set-TimeZone = 'Eastern Standard Time'
  }
   }
-  #This is for the PC PowerPlan
-   Import-DSCResource -ModuleName ComputerManagementDsc
-   Node localhost 
-   {
-      PowerPlan SetPlanBatterySaver
-     {
-    IsSingleInstace = 'Yes'
-    Name = 'BatterySaver'
-    }
-      }
-  #This is for the ExecutionPolicy
-   Import-DSCResource -ModuleName ComputerManagementDsc
-   PowerShellExecutionPolicy ExecutionPolicy
-        {
-            ExecutionPolicyScope = 'LocalMachine'
-            ExecutionPolicy      = 'Restricted'
-           }
-  
+ 
  
  
