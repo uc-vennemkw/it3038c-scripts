@@ -1,0 +1,31 @@
+##This is a script to pull timezones, Set the powerplan on the PC, and to set the execution policy. This is done with the ComputerManagementDsc plug in for powershell.
+
+ Import-DSCResource -ModuleName ComputerManagementDsc
+ TimeZone Eastern Standard Time
+ Node Localhost
+ {
+  isSingleInstace = 'Yes'
+  {
+ Set-TimeZone = 'Eastern Standard Time'
+ }
+  }
+  #This is for the PC PowerPlan
+   Import-DSCResource -ModuleName ComputerManagementDsc
+   Node localhost 
+   {
+      PowerPlan SetPlanBatterySaver
+     {
+    IsSingleInstace = 'Yes'
+    Name = 'BatterySaver'
+    }
+      }
+  #This is for the ExecutionPolicy
+   Import-DSCResource -ModuleName ComputerManagementDsc
+   PowerShellExecutionPolicy ExecutionPolicy
+        {
+            ExecutionPolicyScope = 'LocalMachine'
+            ExecutionPolicy      = 'Restricted'
+           }
+  
+ 
+ 
